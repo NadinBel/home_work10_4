@@ -18,7 +18,7 @@ class Guest(Thread):
 class Cafe:
     def __init__(self, *tables):
         self.tables = tables
-        self.queue = Queue()
+        self.queue = queve.Queue()
     def guest_arrival(self, *guests):
         self.guests = guests
         def set_guest(guest):
