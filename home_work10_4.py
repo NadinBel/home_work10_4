@@ -45,10 +45,9 @@ class Cafe:
                     thread_alive.remove(x)
                     free_table.guest = None
                     if not self.queue.empty():
-                        queve_guest = self.queue.queue[0]
+                        queve_guest = self.queue.get()
                         free_table.guest = queve_guest.name
                         thread_alive.append(queve_guest)
-                        self.queue.get()
                         thguest = next(filter(lambda y: y.name == queve_guest.name, self.guests), None)
                         thguest.start()
                         print(f'{thguest.name} вышел(-ла) из очереди и сел(-а) за стол {free_table.number}')
